@@ -18,8 +18,8 @@ public class KniffelTest {
 			done=true;
 			String[] ans=new String[8];
 		
+			//Spieleranzahl
 			int anzahl_spieler = 0;
-			//1) Spieleranzahl
 			boolean correct=false;
 			while(!correct)
 			{
@@ -36,7 +36,7 @@ public class KniffelTest {
 			}
 		
 		
-			//2) Spielernamen
+			//Spielernamen
 		
 			switch(anzahl_spieler)
 			{
