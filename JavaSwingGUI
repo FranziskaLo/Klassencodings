@@ -1,19 +1,13 @@
-//Ich habe mich ein wenig mit der "GUI-Programmierung" beschäftigt, da wir dies ja auch mit einbinden sollen.
-//Das hier wäre meine Idee, wie wir bei Kniffel beginnen können.
-//Fügt den Code einfach mal in Eclipse ein und schaut es euch an, damit ihr versteht, was ich meine :)
-//FIY: Der Code ist weder fertig noch optimiert, aber jetzt könnt ihr sehen, woran ich so arbeite.
-
 import javax.swing.JOptionPane;
 
-public class Kniffel {
+public class KniffelTest {
 
 	public static void main(String[] args) {
 		
-		new Kniffel();
-
+		new KniffelTest();
 	}
 	
-	public Kniffel()
+	public KniffelTest()
 	{
 		//Einstieg
 		JOptionPane.showMessageDialog(null, "Willkommen bei Kniffel.", "Kniffel", JOptionPane.INFORMATION_MESSAGE);
@@ -22,13 +16,24 @@ public class Kniffel {
 		while(!done)
 		{
 			done=true;
-			String[] ans=new String[7];
+			String[] ans=new String[8];
 		
-		
+			int anzahl_spieler = 0;
 			//1) Spieleranzahl
-			
+			boolean correct=false;
+			while(!correct)
+			{
 			String s = JOptionPane.showInputDialog("Wie viele Spieler nehmen teil?\n\nAchtung! Die Spieleranzahl muss zwischen 2 und 8 liegen.");
-			int anzahl_spieler = Integer.parseInt(s);
+			anzahl_spieler = Integer.parseInt(s);
+			
+			if(anzahl_spieler == 0 || anzahl_spieler > 8)
+			{
+				JOptionPane.showMessageDialog(null, "Bitte wählen Sie eine Zahl zwischen 2 und 8 aus.");
+			}
+			else
+			{
+				correct=true;
+			}
 		
 		
 			//2) Spielernamen
@@ -90,10 +95,7 @@ public class Kniffel {
 				ans[6] = JOptionPane.showInputDialog(null, "Name von Spieler 7.", "Spieler 7", JOptionPane.QUESTION_MESSAGE);
 				ans[7] = JOptionPane.showInputDialog(null, "Name von Spieler 8.", "Spieler 8", JOptionPane.QUESTION_MESSAGE);
 			break;
-			
-			default: 
-				JOptionPane.showMessageDialog(null, "Bitte wählen Sie eine Zahl zwischen 2 und 8 aus.");
-				break;
+			}
 			}
 			
 		
