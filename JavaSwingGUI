@@ -26,7 +26,7 @@ public class KniffelTest {
 			String s = JOptionPane.showInputDialog("Wie viele Spieler nehmen teil?\n\nAchtung! Die Spieleranzahl muss zwischen 2 und 8 liegen.");
 			anzahl_spieler = Integer.parseInt(s);
 			
-			if(anzahl_spieler == 0 || anzahl_spieler > 8)
+			if(anzahl_spieler <= 1 || anzahl_spieler > 8)
 			{
 				JOptionPane.showMessageDialog(null, "Bitte wählen Sie eine Zahl zwischen 2 und 8 aus.");
 			}
